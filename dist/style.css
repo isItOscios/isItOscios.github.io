@@ -1,0 +1,227 @@
+:root {
+    --font-stack: 'Jersey 25', sans-serif;
+    --color-text: black;
+    --color-bg: white;
+    --color-sub-text: #434343;
+    --color-status-open: #189718;
+    --color-status-closed: red;
+    --color-accent: #320a98;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-family: var(--font-stack), sans-serif;
+}
+
+body {
+    font-family: var(--font-stack), sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+.left img {
+    width: 70px;
+    box-shadow: -5px 5px 0px black;
+    border: 1px solid black;
+    transition: color 0.6s ease, background-color 0.6s ease, box-shadow 0.6s ease, transform 0.6s ease;
+}
+
+
+.left {
+    padding: 0 20px 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 50px;
+
+}
+
+.left img:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0;
+    transform: translateX(-5px) translateY(5px);
+}
+
+.nav__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    padding: 18px 100px;
+
+}
+
+.middle {
+    display: flex;
+    gap: 24px;
+    font-size: 40px;
+}
+
+.middle a {
+    color: #919191;
+    transition: color 0.4s ease;
+}
+
+.middle a:hover {
+    color: black;
+}
+
+#active-home {
+    color: black;
+}
+
+#active-port {
+    color: black;
+}
+
+.right p {
+}
+
+.right {
+    transition: color 0.6s ease, background-color 0.6s ease, box-shadow 0.6s ease, transform 0.6s ease;
+    border: 1px solid black;
+    padding: 15px;
+    box-shadow: -5px 5px 0px black;
+
+}
+
+.right:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0;
+    transform: translateX(-5px) translateY(5px);
+}
+
+.right span {
+    color: var(--color-status-open);
+    text-shadow: -1px 1px 0px rgb(20 80 5 / 0.54);
+}
+
+.nav__hr {
+    border: 1px solid black;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid black;
+    font-size: 40px;
+    color: white;
+    background: black;
+}
+
+.footer a {
+    color: white;
+}
+
+
+.main {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 16px;
+}
+
+.main h1 {
+    font-size: 150px;
+}
+
+.main p {
+    color: #333333;
+    text-align: center;
+    max-width: 1300px;
+    font-size: 50px;
+}
+
+
+.click__me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    min-height: 22vh;
+}
+
+.click__me p {
+    font-size: 26px;
+    color: #737373;
+}
+
+
+.footer {
+
+    transition: height .8s ease, font-size 0.8s ease, background-color 0.6s ease, color 1s ease;
+}
+
+.footer:hover {
+    height: 120px;
+    cursor: pointer;
+    font-size: 75px;
+}
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+.desktop-only-message {
+    display: none;
+}
+
+@media (max-width: 1024px), (orientation: portrait) {
+    body > :not(.desktop-only-message) {
+        display: none;
+    }
+
+    .desktop-only-message {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+
+        padding: 32px;
+        color: white;
+        background-color: black;
+        text-align: center;
+    }
+
+    .desktop-only-message p {
+        font-size: clamp(1.75rem, 7vw, 3rem);
+        font-weight: 700;
+    }
+
+    .desktop-only-message span {
+        max-width: 34rem;
+        color: #bcbcbc;
+        font-size: clamp(1rem, 4vw, 1.25rem);
+        line-height: 1.5;
+    }
+}
